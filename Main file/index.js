@@ -5,7 +5,7 @@ import fs from "fs";
 inquirer
   .prompt([
     {
-        message: "Type in your URL: ", 
+        message: "Type in your URL: ",  // Gets user input (URL, in this case) using the inquirer package, 
         name: "URL"
     }
   ])
@@ -15,7 +15,7 @@ inquirer
     var qr_svg = qr.image(url);
     qr_svg.pipe(fs.createWriteStream('qr_image.png'));
 
-    fs.writeFile("URL.txt", "utf8", (err)=>
+    fs.writeFile("URL.txt", "utf8", (err)=>  // Creates a text file to store the generated qr-code.
     {
         if (err) throw err;
         console.log("The file has been saved!");
