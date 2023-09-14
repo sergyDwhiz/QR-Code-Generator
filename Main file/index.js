@@ -15,12 +15,12 @@ inquirer
     var qr_svg = qr.image(url);
     qr_svg.pipe(fs.createWriteStream('qr_image.png'));
 
-    fs.writeFile("URL.txt", "utf8", (err)=>  // Creates a text file to store the generated qr-code.
+    fs.writeFile("URL.txt", url, (err)=>  // Creates a text file to store the generated qr-code.
     {
         if (err) throw err;
         console.log("The file has been saved!");
     });
- 
+  
   })
   .catch((error) => {
     if (error.isTtyError) {
