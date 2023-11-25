@@ -7,7 +7,7 @@ inquirer
     {
         message: "Type in your URL: ",  // Gets user input (URL, in this case) using the inquirer package, 
         name: "URL"
-    }
+    } 
   ])
   .then((answers) => {
     // Use user feedback for... whatever!!

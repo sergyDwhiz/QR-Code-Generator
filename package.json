@@ -1,7 +1,7 @@
 {
   "name": "qr-code-generator.",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generates a unique QR code for any website Expected user input could be: any site.. E.g https://google.com Then check in file labled \"qr_image.png\" for output. (Unique QR code for Google).",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,5 +12,6 @@
   "dependencies": {
     "inquirer": "^9.2.11",
     "qr-image": "^3.2.0"
-  }
+  },
+  "devDependencies": {}
 }
