@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// API routes for QR Code Generator
-router.use('/qr-code', require('./api/qr-code'));
+// Define your API routes here
 
-
-module.exports = router;
+module.exports = router; // Export the router for usage in index.js 
