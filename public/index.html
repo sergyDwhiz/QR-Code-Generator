@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>QR Code Generator</h1>
+    <div id="user-profile">
+      <img src="profile-picture.jpg" alt="User Profile Picture">
+      <span id="display-name">John Doe</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="qr-code-form">
+      <input type="text" id="url-input" placeholder="Enter URL">
+      <button id="convert-button">Convert</button>
+    </div>
+
+    <div id="qr-code-display">
+      <img src="qr-code.png" alt="QR Code">
+      <p id="success-message">QR code generated and downloaded successfully!</p>
+      <p id="error-message">Invalid URL. Please enter a valid URL.</p>
+    </div>
+
+    <div id="qr-code-history">
+      <h2>QR Code History</h2>
+      <ul>
+        <li>
+          <img src="qr-code1.png" alt="QR Code 1">
+          <button class="download-button">Download</button>
+        </li>
+        <li>
+          <img src="qr-code2.png" alt="QR Code 2">
+          <button class="download-button">Download</button>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div id="social-sharing">
+      <button class="share-button">Share on Facebook</button>
+      <button class="share-button">Share on Twitter</button>
+      <button class="share-button">Share on LinkedIn</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
