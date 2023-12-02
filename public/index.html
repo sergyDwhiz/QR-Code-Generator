@@ -15,11 +15,13 @@
 
   <main>
     <div id="qr-code-form">
-      <input type="text" id="url-input" placeholder="Enter URL">
-      <button id="convert-button">Convert</button>
+      <label for="url-input">Enter URL:</label>
+      <input type="text" id="url-input" placeholder="https://example.com">
+      <button id="convert-button">Generate QR Code</button>
     </div>
 
     <div id="qr-code-display">
+      <h2>QR Code</h2>
       <img src="qr-code.png" alt="QR Code">
       <p id="success-message">QR code generated and downloaded successfully!</p>
       <p id="error-message">Invalid URL. Please enter a valid URL.</p>
@@ -28,26 +30,15 @@
     <div id="qr-code-history">
       <h2>QR Code History</h2>
       <ul>
-        <li>
-          <img src="qr-code1.png" alt="QR Code 1">
-          <button class="download-button">Download</button>
-        </li>
-        <li>
-          <img src="qr-code2.png" alt="QR Code 2">
-          <button class="download-button">Download</button>
-        </li>
+        <li>QR Code 1</li>
+        <li>QR Code 2</li>
+        <li>QR Code 3</li>
       </ul>
     </div>
   </main>
 
   <footer>
-    <div id="social-sharing">
-      <button class="share-button">Share on Facebook</button>
-      <button class="share-button">Share on Twitter</button>
-      <button class="share-button">Share on LinkedIn</button>
-    </div>
+    <p>&copy; 2022 QR Code Generator. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
