@@ -84,9 +84,24 @@ button {
   cursor: pointer; 
   margin-top: 3cm;
 }
+#convert-button{
+  background-color:rgb(47, 0, 255);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0.2cm;
+  cursor: pointer; 
+  margin-top: 0.3cm;
+}
 
 #qr-code-display {
   text-align: center;
+  margin-top: 20px;
+}
+#qr-code-display h2{
+  font-family: "Montserrat";
+  font-size:x-large; 
+  color: rgb(47, 0, 255); 
 }
 
 h2 {
@@ -94,10 +109,11 @@ h2 {
 }
 
 #qr-code-display img {
-  max-width: 200px;
-  margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
-
 #success-message,
 #error-message {
   display: none;
