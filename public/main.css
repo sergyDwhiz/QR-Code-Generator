@@ -1,7 +1,13 @@
 /* main.css */
 
+.main-container{
+  padding: 3cm 2px solid black;
+  width: 70%;
+  align-content: center;
+  margin-left: 15%;
+}
 body {
-  background-color: lightyellow;
+  background-color: #ad2e2e;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -10,7 +16,7 @@ body {
 header {
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 10px;
 }
 
 h1 {
