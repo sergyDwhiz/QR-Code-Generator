@@ -4,7 +4,6 @@
   <title>QR Code Generator</title>
   <link rel="stylesheet" type="text/css" href="../public/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="favicon.io" type="favicon" src
 </head>
 <body>
   <!-- <header>
@@ -14,28 +13,41 @@
       <span id="display-name">John Doe</span>
     </div>
   </header> -->
-  <div class="main-container">
+  <div class="main-container"> 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">QR-Code Generator</a>
+      <a class="navbar-brand" href=""><h3> QR Code Generator</h3></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">QR-Code Generator</a>
+          <a class="nav-link active" aria-current="page" href="#"></a>
           <!-- <a class="nav-link" href="#">Featu</a>
           <a class="nav-link" href="#">Pricing</a> -->
         </div>
       </div>
     </div>
   </nav>
+  <div class="Protip">
+    <p> <h4> Before you begin... </i> </h4>
+    <ul> 
+      <li type="disc"> <b> What is a QR Code?</b> <i> A QR code (Quick Response code) is a two-dimensional barcode that can be scanned using a smartphone or QR code reader. It
+         contains encoded information such as text, URLs, or other data. When scanned, the QR code can quickly provide access to the encoded information, allowing
+          users to easily access websites, make payments, or perform other actions. QR codes are commonly used in marketing, advertising, ticketing, and various other applications.</i></li>
+      <li type="disc"><b> Why have One? </b> <i> QR codes allow users to quickly access information by scanning the code with a smartphone or QR code reader. This can be useful for sharing website URLs, contact details, product information, event details, and more.  </i>
+      <li type="disc"><b>Are the QR Codes generated on this site restricted to personal use?  </b> <i> No! There is no restriction of any kind. You can use these QR Code images for whatever you like, also commercially. Please note that the word "QR Code" is a registered trademark of
+       <b>  DENSO WAVE INCORPORATED.</b> If you want to use it, you have to add a trademark comment. Please see <a href="https://www.qrcode.com/en/faq.html#patentH2Title" target="_blank"> here</a> for details.</i> </li> 
+      </li> </i>
+    </ul> </p> 
+  </div> 
 
   <main>
     <div id="qr-code-form">
-      <label for="url-input">Enter URL:</label>
+      <label for="url-input">Enter URL to Begin:</label>
       <input type="text" id="url-input" placeholder="https://example.com">
-      <button id="convert-button">Generate QR Code</button>
+      <br> 
+      <button id="convert-button">Generate</button>
     </div>
 
     <div id="qr-code-display">
@@ -53,11 +65,7 @@
         <li>QR Code 3</li> 
       </ul>   
     </div>
-  </main> 
-
-  <footer>
-    <p>&copy; 2022 QR Code Generator. All rights reserved.</p>
-  </footer>
+  </main>
 </div>
 </body>
 </html>
