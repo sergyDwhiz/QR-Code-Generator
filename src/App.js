@@ -1,8 +1,8 @@
-import express from "express";
-import qr from "qr-image";
-import path from "path";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+const express = require('express');
+const qr = require('qr-image');
+const path = require('path');
+const {fileURLToPath} = require('url');
+const { dirname } = require( 'path');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,7 +13,7 @@ const port = 3000;
 app.use(express.json());
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views')); 
 
 app.post("/generate-qr", (req, res) => {
   const { url } = req.body;
