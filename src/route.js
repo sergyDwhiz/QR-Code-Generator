@@ -4,8 +4,9 @@ const successMessage = document.getElementById('success-message');
 const errorMessage = document.getElementById('error-message');
 
 convertButton.addEventListener('click', () => {
+  // convertButton.style.backgroundColor = 'red';  
   const url = urlInput.value;
-
+  
   fetch('/generate-qr', {
     method: 'POST',
     headers: {
