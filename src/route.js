@@ -1,36 +1,35 @@
-const urlInput = document.getElementById('url-input');
-const convertButton = document.getElementById('convert-button');
+// Get the elements from the DOM 
+const qrCodeDisplay = document.getElementById('qr-code-display');
 const successMessage = document.getElementById('success-message');
 const errorMessage = document.getElementById('error-message');
 
-convertButton.addEventListener('click', () => {
-  // convertButton.style.backgroundColor = 'red';  
-  const url = urlInput.value;
-  
-  fetch('/generate-qr', {
+// Function to generate QR code
+function generateQRCode(url) {
+  fetch('http://localhost:3000/generate-qr', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ url })
   })
-  .then(response => {
-    if (response.ok) {
+  .then(response => response.json())
+  .then(data => {
+    if (data.qrCode) {
+      // Create an img element to display the QR code
+      const img = document.createElement('img');
+      img.src = data.qrCode;
+      qrCodeDisplay.appendChild(img);
+
+      // Show success message and hide error message
       successMessage.style.display = 'block';
       errorMessage.style.display = 'none';
-      return response.blob();
     } else {
-      successMessage.style.display = 'none';
+      // Show error message and hide success message
       errorMessage.style.display = 'block';
-      throw new Error('Invalid URL');
+      successMessage.style.display = 'none';
     }
-  })
-  .then(blob => {
-    const qrCodeURL = URL.createObjectURL(blob);
-    const qrCodeDownloadLink = document.getElementById('qr-code-download');
-    qrCodeDownloadLink.href = qrCodeURL;
   })
   .catch(error => {
     console.error('Error:', error);
   });
-});
+}
