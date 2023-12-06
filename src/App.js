@@ -18,15 +18,15 @@ app.get('/', (req, res) => {
 app.post('/generate-qr', (req, res) => {
   const url = req.body.url;
 
-  QRCode.toFile(dirname + '/images/qr-code.png', url, (err) => {
+  QRCode.toFile(__dirname + '/qr-code.png', url, (err) => {
     if (err) {
       console.error(err);
       res.status(500).send('Error generating QR code');
     } else {
-      res.sendFile(__dirname + '/images/qr-code.png');
+      res.sendFile(__dirname + '/qr-code.png');
     }
   });
-});
+}); 
 
 app.get('/qr-code.png', (req, res) => {
   res.sendFile(__dirname + '/images/qr-code.png');
