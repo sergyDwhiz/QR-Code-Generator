@@ -25,10 +25,10 @@ app.get('/', (req, res) => {
 app.post('/generate-qr', (req, res) => {
   const url = req.body.url; 
 
-  const qrPng = qr.imageSync(url, { type: 'png' });
-  const qrPngDataURL = `data:image/png;base64,${qrPng.toString('base64')}`;
+  const qrPng = qr.image(url, { type: 'png' });
+  qrPng.pipe(fs.createWriteStream('public/qr-code.png'));
 
-  res.json({ path: qrPngDataURL });
+  res.json({ path: '/qr-code.png' });
 });
 
 app.get('/qr-code.png', (req, res) => {
