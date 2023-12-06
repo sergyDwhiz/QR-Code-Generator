@@ -7,34 +7,31 @@ const qrCodeImage = document.getElementById('qr-code-image');
 
 convertButton.addEventListener('click', () => {
   const url = urlInput.value; 
-  // convertButton.style.color='red';
-   
-  fetch('/generate-qr', { 
+
+  fetch('http://localhost:3000/generate-qr', { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },   
-    body: JSON.stringify({ url })
+    body: JSON.stringify({url})
   })
   .then(response => {
-    if (response.ok) {
-      // qrCodeImage.src = '/images/qr-code.png'; 
-      // successMessage.style.display = 'block';
-      // errorMessage.style.display = 'none';
-      // return response.blob();
+    console.log('Response status:', response.status); // Log the response status
+    return response.json();
+  })
+  .then(data => {
+    console.log('Response body:', data); // Log the response body
+    if (data.path) {
+      qrCodeImage.src = data.path; 
+      successMessage.style.display = 'block';
+      errorMessage.style.display = 'none';
     } else {
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'block';
       throw new Error('Invalid URL, Enter a valid URL');
     }
   })
-  .then(blob => {
-    const objectURL = URL.createObjectURL(blob);
-    qrCodeImage.src = objectURL;
-    qrCodeDownloadLink.href = objectURL;
-    qrCodeDownloadLink.download = '/images/qr-code.png';
-  })
   .catch(error => {
     console.error('Error:', error);
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'block';
   });
 });
