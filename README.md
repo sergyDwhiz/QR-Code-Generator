@@ -3,7 +3,7 @@ This is a QR Code Generator project built with Node.js and Express. It provides 
 
 # Dependencies
 The project relies on the following dependencies:
-Express, Body-parser: Middleware for parsing incoming request bodies.
+Express, Body-parser: Middleware for parsing incoming request bodies, fs, qr-image, cors. 
 Google Auth Library: A library for implementing Google Sign-In API.
 
 # Installation
@@ -14,11 +14,12 @@ git clone https://github.com/Sergius-Nyah/QR-Code-Generator.git
 2. Navigate to the project dir:
 cd QR-Code-Generator
 3. Install dependencies
-npm i express body-parser qrcode google-auth-library
-4. Start the server:
+npm i express body-parser qr-image cors fs url bodyparser path google-auth-library
+4. Start the server: nodemon src/App.js
 npm start
 5. Access the API at http://localhost:3000.
-
+*** Before starting, enable Cross Origin Request Sharing. 
+npm i --save-dev @types/cors
 # Usage
 To generate a QR code, send a POST request to the /qr-code endpoint with the desired URL as the request body. The server will respond with a downloadable QR code image.
 
