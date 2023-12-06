@@ -3,10 +3,11 @@ const convertButton = document.getElementById('convert-button');
 const successMessage = document.getElementById('success-message');
 const errorMessage = document.getElementById('error-message');
 const qrCodeDownloadLink = document.getElementById('qr-code-download');
+const qrCodeImage = document.getElementById('qr-code-image');
 
 convertButton.addEventListener('click', () => {
   const url = urlInput.value; 
-  convertButton.style.color='red';
+  // convertButton.style.color='red';
    
   fetch('/generate-qr', { 
     method: 'POST',
@@ -17,9 +18,10 @@ convertButton.addEventListener('click', () => {
   })
   .then(response => {
     if (response.ok) {
-      successMessage.style.display = 'block';
-      errorMessage.style.display = 'none';
-      return response.blob();
+      // qrCodeImage.src = '/images/qr-code.png'; 
+      // successMessage.style.display = 'block';
+      // errorMessage.style.display = 'none';
+      // return response.blob();
     } else {
       successMessage.style.display = 'none';
       errorMessage.style.display = 'block';
@@ -27,8 +29,10 @@ convertButton.addEventListener('click', () => {
     }
   })
   .then(blob => {
-    const qrCodeURL = URL.createObjectURL(blob);
-    qrCodeDownloadLink.href = qrCodeURL;
+    const objectURL = URL.createObjectURL(blob);
+    qrCodeImage.src = objectURL;
+    qrCodeDownloadLink.href = objectURL;
+    qrCodeDownloadLink.download = '/images/qr-code.png';
   })
   .catch(error => {
     console.error('Error:', error);

@@ -1,7 +1,6 @@
 import express from 'express';
 import QRCode from 'qr-image';
 import bodyParser from 'body-parser';
-import fs from 'fs';
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -14,7 +13,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
-});
+}); 
 
 app.post('/generate-qr', (req, res) => {
   const url = req.body.url;

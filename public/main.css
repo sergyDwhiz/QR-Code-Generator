@@ -108,12 +108,12 @@ h2 {
   margin-top: 0;
 }
 
-#qr-code-display img {
+/* #qr-code-display img {
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
-}
+} */
 #success-message,
 #error-message {
   display: none;
@@ -125,9 +125,27 @@ h2 {
   margin-top: 20px;
 }
 
-footer {
+/* footer {
   background-color: #333;
   color: white;
   padding: 10px;
   text-align: center;
-}
+}  */
+/* #qr-code-display {
+  text-align: center;
+  margin-top: 2em;
+} */
+
+/* #qr-code-image {
+  max-width: 100%;
+  height: auto;
+} */
+
+/* #qr-code-download-link {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  color: white;
+  background-color: #007BFF;
+  text-decoration: none;
+} */
