@@ -1,11 +1,4 @@
 /* main.css */
-/* body {
-  background-color: #ec0e0e;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;  
-}  */
-
 .main-container{
   border: 0.2px solid rgb(175, 170, 170);
   width: 70%;
@@ -30,12 +23,6 @@
   color: rgb(47, 0, 255);
   font-weight: 200; 
 }
-
-/* header {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-} */
 
 h1 {
   margin: 0;
@@ -108,12 +95,6 @@ h2 {
   margin-top: 0;
 }
 
-/* #qr-code-display img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-} */
 #success-message,
 #error-message {
   display: none;
@@ -121,31 +102,11 @@ h2 {
   margin-top: 10px;
 }
 
-#qr-code-history {
-  margin-top: 20px;
+#qr-code-download-link {
+   display: inline-block;
+   margin-top:1em;
+   padding:.5em1em;
+   color:white;
+   background-color:#007BFF;
+   text-decoration:none
 }
-
-/* footer {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}  */
-/* #qr-code-display {
-  text-align: center;
-  margin-top: 2em;
-} */
-
-/* #qr-code-image {
-  max-width: 100%;
-  height: auto;
-} */
-
-/* #qr-code-download-link {
-  display: inline-block;
-  margin-top: 1em;
-  padding: 0.5em 1em;
-  color: white;
-  background-color: #007BFF;
-  text-decoration: none;
-} */
