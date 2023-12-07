@@ -28,16 +28,20 @@ const codeContainer= document.getElementById('qrCodeContainer');
   //     })
   //     .catch(error => console.error('Error:', error));
   // });
-urlForm.addEventListener('submit', function(event)
-{
-  event.preventDefault();
-  const url= urlInput.value;
-  fetch(`/generate-qr?url=${encodeURIComponent(url)}`)
-  .then(response=> response.text())
-  .then(html=> {
-codeContainer.innerHTML= html;
-  })
-  .catch(error=> {
-    console.error('Error generating QR code:', error);
+  urlForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const url = urlInput.value;
+    fetch(`/generate-qr?url=${encodeURIComponent(url)}`)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = URL.createObjectURL(blob);
+        const img = document.createElement('img');
+        img.src = url;
+        codeContainer.innerHTML = '';
+        codeContainer.appendChild(img);
+      })
+      .catch(error => {
+        console.error('Error generating QR code:', error);
+      });
   });
-});
+  
