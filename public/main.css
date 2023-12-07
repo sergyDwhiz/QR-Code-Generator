@@ -110,3 +110,12 @@ h2 {
    background-color:#007BFF;
    text-decoration:none
 }
+#qrCodeContainer{
+  width: 35%;
+  height: 6cm;
+  /* background-color: #333; */
+  margin-left: 32%;
+  margin-top: 3%;
+  border: 0.2px solid black;
+}
+
