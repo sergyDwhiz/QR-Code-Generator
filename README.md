@@ -1,5 +1,5 @@
 # QR-Code-Generator.
-This is a QR Code Generator project built with Node.js and Express. It provides a simple API for generating QR codes based on user input.
+Provides a simple API for generating QR codes based on user input.
 
 # Dependencies
 The project relies on the following dependencies:
