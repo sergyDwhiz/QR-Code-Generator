@@ -25,6 +25,7 @@ To generate a QR code, send a POST request to the /qr-code endpoint with the des
 
 Example request using cURL:
 curl -X POST -H "Content-Type: application/json" -d '{"url": "https://example.com"}' http://localhost:3000/qr-code
+(![alt text](image.png))
 
 # Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a PR (:)..:
