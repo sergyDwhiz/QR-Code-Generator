@@ -63,31 +63,40 @@
     
   </main> 
 </div> 
-
 <script>
-  const urlForm = document.getElementById('urlForm');
   const generateButton = document.getElementById('generateButton');
-  const urlInput = document.getElementById('urlInput');
-  const codeContainer = document.getElementById('qrCodeContainer');
+  const qrcodeContainer = document.getElementById('qrCodeContainer');
+  
+  generateButton.addEventListener('click', async () => {
+    try {
+      const url = document.getElementById('urlInput').value;  
+      try {
+        const response = await fetch(`/generate-qr?url=${encodeURIComponent(url)}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch QR code data');
+        }
+        const data = await response.json();
 
-  generateButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    const url = urlInput.value;
-    fetch(`/generate-qr?url=${encodeURIComponent(url)}`)
-      .then(response => response.blob())
-      .then(blob => {
-        const url = URL.createObjectURL(blob);
-        const img = document.createElement('img');
-        img.src = url;
-        codeContainer.innerHTML = '';
-        codeContainer.appendChild(img);
-      })
-      .catch(error => {
-        console.error('Error generating QR code:', error);
-      });
-  });
+        if (data.success) {
+          document.getElementById('success-message').style.display = 'block';
+          document.getElementById('error-message').style.display = 'none';
+          document.getElementById('qr-code-download-link').href = data.url;
+          document.getElementById('qr-code-download-link').style.display = 'inline-block';
 
-</script>
-</body>
-</html>
+          const imageData = await response.blob();
+          const imageUrl = URL.createObjectURL(imageData);
 
+          const qrcodeImage = document.createElement('img');
+          qrcodeImage.src = imageUrl;
+          qrcodeContainer.innerHTML = ''; // Clear the container before appending new image
+          qrcodeContainer.appendChild(qrcodeImage);
+        } else {
+          document.getElementById('error-message').style.display = 'block';
+          document.getElementById('success-message').style.display = 'none';
+          document.getElementById('qr-code-download-link').style.display = 'none';
+        }
+      } catch (error) {
+        alert(error.message);
+      }
+  };
+  </script>
