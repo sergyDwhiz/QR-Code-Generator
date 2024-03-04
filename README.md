@@ -3,7 +3,7 @@ Provides a simple API for generating QR codes based on user input.
 
 # Dependencies
 The project relies on the following dependencies:
-Express, Body-parser: Middleware for parsing incoming request bodies, fs, qr-image, cors. 
+Express, Body-parser: Middleware for parsing incoming request bodies, qr-image, cors. 
 Google Auth Library: A library for implementing Google Sign-In API.
 
 # Installation
